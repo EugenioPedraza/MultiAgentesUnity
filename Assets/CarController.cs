@@ -29,25 +29,25 @@ public class CarController : MonoBehaviour
         passedLight = hasPassedLight;
         turnRight = shouldTurnRight;
 
-        // Apply the correct rotation based on the direction
+        
         if (direction == Vector3.right)
         {
-            transform.rotation = Quaternion.Euler(-100.7f, 104.19f, -14.3f); // Left to right
+            transform.rotation = Quaternion.Euler(-100.7f, 104.19f, -14.3f); 
         }
         else if (direction == Vector3.forward)
         {
-            transform.rotation = Quaternion.Euler(-97.68f, 2.35f, 0); // South to north
+            transform.rotation = Quaternion.Euler(-97.68f, 2.35f, 0); 
         }
         else if (direction == Vector3.left)
         {
-            transform.rotation = Quaternion.Euler(-96.07f, -94.81f, 5.92f); // Right to left
+            transform.rotation = Quaternion.Euler(-96.07f, -94.81f, 5.92f); 
         }
         else if (direction == Vector3.back)
         {
-            transform.rotation = Quaternion.Euler(-88.49f, 0.22f, -180.6f); // North to south
+            transform.rotation = Quaternion.Euler(-88.49f, 0.22f, -180.6f); 
         }
 
-        transform.localScale = carScale; // Ensure the scale is set
+        transform.localScale = carScale; 
     }
 
     private void MakeRightTurn()
