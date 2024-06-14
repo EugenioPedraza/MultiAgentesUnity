@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 import random
@@ -117,7 +118,7 @@ def spawn_car(cars, direction, car_id, spawn_probability=0.5):
     car = Car(car_id, pos, 0.2, direction, color, turn_right)
     cars.append(car)
 
-def simulate_intersection(sim_steps):
+def simulate_intersection(sim_steps, output_directory):
     cars = []
     car_id = 1
 
@@ -142,7 +143,7 @@ def simulate_intersection(sim_steps):
         plt.axhline(0, color='black', linewidth=2)
         plt.axvline(0, color='black', linewidth=2)
 
-        # Spawn new cars at regular intervals
+        # Aparecer carros en cierto intervalo
         spawn_timer += 1
         if spawn_timer >= spawn_interval:
             spawn_timer = 0
@@ -150,12 +151,12 @@ def simulate_intersection(sim_steps):
                 spawn_car(cars, direction, car_id, spawn_probability=0.2)  # Adjust the spawn probability here
                 car_id += 1
 
-        # Update and draw cars
+        # Actualizar carros
         for car in cars:
             car.update(traffic_lights[np.where(np.all(np.array([light.direction for light in traffic_lights]) == car.direction, axis=1))[0][0]], cars)
             car.draw()
 
-        # Update traffic lights
+        # Actualizar luces de trafico
         traffic_lights[current_green_light].update()
         if traffic_lights[current_green_light].state == "red":
             current_green_light = (current_green_light + 1) % len(traffic_lights)
@@ -177,12 +178,17 @@ def simulate_intersection(sim_steps):
         plt.grid(True)
         plt.pause(0.001)
 
-    # Save the simulation data to a JSON file
-    with open('simulation_data.json', 'w') as f:
+
+    if not os.path.exists(output_directory):
+        os.makedirs(output_directory)
+
+    output_file = os.path.join(output_directory, 'simulation_data.json')
+    with open(output_file, 'w') as f:
         json.dump(simulation_data, f, indent=4)
 
     plt.show()
 
-# Run the simulation
+
 sim_steps = 1000
-simulate_intersection(sim_steps)
+output_directory = '../Assets/Resources' 
+simulate_intersection(sim_steps, output_directory)
