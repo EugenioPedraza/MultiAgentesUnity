@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{821C1D46-8E70-CB09-05DC-50787BF989E2}|">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="90d11c5a-7ed8-4d14-ac72-4f8cb99e8a95" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/CarController.cs">
+    <Files>
+      <File FileName="Assets/TrafficLightController.cs" Line="103" Column="1" />
+      <File FileName="Assets/TrafficSimulation.cs" Line="92" Column="1" />
+      <File FileName="Assets/CarController.cs" Line="22" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="EvidenciaFinal" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Resources" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>
